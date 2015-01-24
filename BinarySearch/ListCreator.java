@@ -20,7 +20,7 @@ public class ListCreator
             int num = (int) (Math.abs((numberRange + 1) * Math.random()));
             list.add(num);
         }
-        return QuickSort.quickSort(list);
+        return list;
     }
     
     public static List<Integer> makeSorted(int size) {
