@@ -29,38 +29,29 @@ public class BinarySearchTester
      */
     @Test
     public void findInFilled() {
-        List<Integer> list = SortedListCreator.createSortedList(10);
-        if (list.contains(0)) {
-            assertTrue(BinarySearch.binarySearch(list, 0));
-        } else {
-            assertFalse(BinarySearch.binarySearch(list, 0));
+        List<Integer> list = ListCreator.makeSorted(10);
+        for (int i = 0; i <= ListCreator.getRange(); i++) {
+            if (list.contains(i)) {
+                assertTrue(BinarySearch.binarySearch(list, i));
+            } else {
+                assertFalse(BinarySearch.binarySearch(list, i));
+            }
         }
-        if (list.contains(200)) {
-            assertTrue(BinarySearch.binarySearch(list, 200));
-        } else {
-            assertFalse(BinarySearch.binarySearch(list, 200));
+        list = ListCreator.makeSorted(100);
+        for (int i = 0; i <= ListCreator.getRange(); i++) {
+            if (list.contains(i)) {
+                assertTrue(BinarySearch.binarySearch(list, i));
+            } else {
+                assertFalse(BinarySearch.binarySearch(list, i));
+            }
         }
-        list = SortedListCreator.createSortedList(100);
-        if (list.contains(0)) {
-            assertTrue(BinarySearch.binarySearch(list, 0));
-        } else {
-            assertFalse(BinarySearch.binarySearch(list, 0));
-        }
-        if (list.contains(200)) {
-            assertTrue(BinarySearch.binarySearch(list, 200));
-        } else {
-            assertFalse(BinarySearch.binarySearch(list, 200));
-        }
-        list = SortedListCreator.createSortedList(1000);
-        if (list.contains(0)) {
-            assertTrue(BinarySearch.binarySearch(list, 0));
-        } else {
-            assertFalse(BinarySearch.binarySearch(list, 0));
-        }
-        if (list.contains(200)) {
-            assertTrue(BinarySearch.binarySearch(list, 200));
-        } else {
-            assertFalse(BinarySearch.binarySearch(list, 200));
+        list = ListCreator.makeSorted(1000);
+        for (int i = 0; i <= ListCreator.getRange(); i++) {
+            if (list.contains(i)) {
+                assertTrue(BinarySearch.binarySearch(list, i));
+            } else {
+                assertFalse(BinarySearch.binarySearch(list, i));
+            }
         }
     }
 }
