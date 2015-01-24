@@ -9,17 +9,17 @@ import java.util.*;
 public class ListCreator
 {
     private static int numberRange = 1000;
-
+    
+    public static int getRange() {
+        return numberRange;
+    }
+    
     public static List<Integer> make(int size) {
         List<Integer> list = new ArrayList<Integer>();
         for (int i = 1; i <= size; i++) {
             int num = (int) (Math.abs((numberRange + 1) * Math.random()));
             list.add(num);
         }
-        return QuickSort.quickSort(list);
-    }
-
-    public static int getRange() {
-        return numberRange;
+        return list;
     }
 }
