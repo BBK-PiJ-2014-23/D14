@@ -13,24 +13,12 @@ import java.util.*;
  */
 public class QuickSortTester
 {
-    List<Integer> list;
-
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
-    @Before
-    public void setUp()
-    {
-        list = new ArrayList<Integer>();
-    }
-
     /**
      * 
      */
     @Test
     public void checkAlreadySorted() {
+        List<Integer> list = new ArrayList<Integer>();
         assertEquals(QuickSort.quickSort(list).toString(), "[]");
         list.add(3);
         assertEquals(QuickSort.quickSort(list).toString(), "[3]");
@@ -41,11 +29,10 @@ public class QuickSortTester
      */
     @Test
     public void checkSorted() {
-        list.add(3);
-        list.add(7);
-        list.add(2);
-        list.add(9);
-        list.add(1);
-        assertEquals(QuickSort.quickSort(list).toString(), "[1, 2, 3, 7, 9]");
+        List<Integer> list = ListCreator.make(1000);
+        list = QuickSort.quickSort(list);
+        for (int i = 0; i < list.size() - 1; i++) {
+            assertTrue(list.get(i + 1) >= list.get(i));
+        }
     }
 }
