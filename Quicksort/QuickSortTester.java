@@ -31,6 +31,7 @@ public class QuickSortTester
     public void checkSorted() {
         List<Integer> list = ListCreator.make(1000);
         list = QuickSort.quickSort(list);
+        assertTrue(list.size() == 1000);
         for (int i = 0; i < list.size() - 1; i++) {
             assertTrue(list.get(i + 1) >= list.get(i));
         }
